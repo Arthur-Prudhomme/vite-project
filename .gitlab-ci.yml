@@ -1,9 +1,9 @@
-image: node:lastest
+image: node:latest
 stages:
   - install
   - test
 install:
-  stages: install
+  stage: install
   script: npm install
   artifacts:
     expire_in: 1 days
@@ -11,8 +11,9 @@ install:
     paths:
       - node_modules/
 
-test:
-  stages : test
+vitest:
+  stage: test
   dependencies:
-   - install
-   script: npm test
+    - install
+  script:
+    - npm run test
