@@ -1,0 +1,9 @@
+image: node:lastest
+
+stages:
+  - install
+
+install:
+  stages: install
+
+  script: npm install
